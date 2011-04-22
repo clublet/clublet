@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_many :authentications
+  has_many :memberships
+  has_many :clubs, :through => :memberships
 
   validates_presence_of :name
 
