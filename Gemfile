@@ -8,6 +8,7 @@ gem 'compass'
 gem 'compass-960-plugin', :require => 'ninesixty'
 gem 'html5-boilerplate'
 gem 'pg'
+gem 'thumbs_up'
 
 group :development, :test do
   gem "capybara"

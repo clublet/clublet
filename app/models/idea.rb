@@ -1,4 +1,6 @@
 class Idea < ActiveRecord::Base
+  acts_as_voteable
+
   belongs_to :club
 
   validates_presence_of :title, :description

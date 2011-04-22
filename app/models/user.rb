@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  acts_as_voter
+
   has_many :authentications
   has_many :memberships
   has_many :clubs, :through => :memberships
