@@ -45,6 +45,8 @@ GEM
       ffi (~> 1.0.6)
     compass (0.10.6)
       haml (>= 3.0.4)
+    compass-960-plugin (0.10.2)
+      compass (>= 0.10.0)
     culerity (0.2.15)
     diff-lcs (1.1.2)
     erubis (2.6.6)
@@ -175,6 +177,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   compass
+  compass-960-plugin
   haml (>= 3.0.0)
   html5-boilerplate
   jquery-rails
