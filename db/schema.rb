@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110422050152) do
+ActiveRecord::Schema.define(:version => 20110422052618) do
 
   create_table "authentications", :force => true do |t|
     t.string   "type"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20110422050152) do
     t.string   "country"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "timezone"
   end
 
   create_table "ideas", :force => true do |t|
@@ -36,6 +37,14 @@ ActiveRecord::Schema.define(:version => 20110422050152) do
     t.text     "description"
     t.integer  "user_id"
     t.integer  "club_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "meetings", :force => true do |t|
+    t.integer  "club_id"
+    t.datetime "start"
+    t.datetime "end"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

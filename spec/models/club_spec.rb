@@ -6,7 +6,7 @@ describe Club do
   end
 
   # presence_of
-  %w{name city country}.each do |field|
+  %w{name city country timezone}.each do |field|
     it "errors if #{field} is nil" do
       @club.update_attributes(field.to_sym => nil)
       @club.should have(1).error_on(field.to_sym)
