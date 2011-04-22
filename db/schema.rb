@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110422040731) do
+ActiveRecord::Schema.define(:version => 20110422050152) do
 
   create_table "authentications", :force => true do |t|
     t.string   "type"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20110422040731) do
     t.string   "access_secret"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "clubs", :force => true do |t|
@@ -35,6 +36,13 @@ ActiveRecord::Schema.define(:version => 20110422040731) do
     t.text     "description"
     t.integer  "user_id"
     t.integer  "club_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
