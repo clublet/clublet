@@ -9,9 +9,7 @@
 </head>
 <body class="<%= controller.controller_name %>">
   <div id="container">
-    <header id="header">
-      <%= render 'layouts/header' %>
-    </header>
+    <%= render 'layouts/header' %>
     <div id="main-content" role="main">
       <%= render 'layouts/flashes' %>
       <%= yield %>
