@@ -1,0 +1,42 @@
+<%# Grab Google CDN's jQuery, with a protocol relative URL %>
+<%# Looks for google_api_key first in ENV['GOOGLE_API_KEY'] then in config/google.yml %>
+<%# remote_jquery and local_jquery helpers use minified jquery unless Rails.env is development %>
+<% if !google_api_key.blank? %>
+  <%= javascript_include_tag "//www.google.com/jsapi?key=#{google_api_key}" %>
+  <script>//<![CDATA[
+    google.load(<%= remote_jquery("1.5.2") %>);
+  //]]></script>
+<% else %>
+  <%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/#{ local_jquery("1.5.2") }" %>
+<%- end -%>
+
+<%# fall back to local jQuery if necessary %>
+<script>//<![CDATA[
+  window.jQuery || document.write("<script src='/javascripts/jquery.min.js'>\x3C/script>")
+//]]></script>
+
+<%= javascript_include_tag 'rails', 'plugins', 'application' %>
+
+<%# Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb %>
+<!--[if lt IE 7 ]>
+  <script src="/javascripts/dd_belatedpng.js?1302721538" type="text/javascript"></script>
+  <script type='text/javascript'>
+    //<![CDATA[
+      DD_belatedPNG.fix('img, .png_bg');
+    //]]>
+  </script>
+<![endif]-->
+
+<%#  Append your own using content_for :javascripts %>
+<%= yield :javascripts %>
+
+<%# asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet %>
+<%# Looks for google_account_id first in ENV['GOOGLE_ACCOUNT_ID'] then in config/google.yml %>
+<% if !google_account_id.blank? %>
+<script>//<![CDATA[
+  var _gaq=[["_setAccount","<%= google_account_id %>"],["_trackPageview"]];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+  g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+  s.parentNode.insertBefore(g,s)}(document,"script"));
+//]]></script>
+<% end %>
