@@ -1,0 +1,16 @@
+common: &COMMON
+  adapter: postgresql
+  username: postgres
+  password:
+
+development:
+  <<: *COMMON
+  database: clublet_dev
+
+test:
+  <<: *COMMON
+  database: clublet_test
+
+production:
+  <<: *COMMON
+  database: clublet_prod
