@@ -183,7 +183,6 @@ DEPENDENCIES
   compass
   compass-960-plugin
   factory_girl_rails
-  haml (>= 3.0.0)
   html5-boilerplate
   jquery-rails
   omniauth (~> 0.2.0)
