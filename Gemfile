@@ -5,8 +5,6 @@ gem 'rails', '3.0.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -34,3 +32,5 @@ gem "jquery-rails"
 gem "omniauth", "~> 0.2.0"
 gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]
 gem "haml", ">= 3.0.0"
+gem 'compass'
+gem 'pg'
